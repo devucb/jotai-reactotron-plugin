@@ -19,7 +19,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "keywords": [
     "jotai",
