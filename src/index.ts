@@ -20,7 +20,7 @@ export function jotaiPlugin({ atoms, store }: StorePluginOptions) {
     for (const { name, atom } of atoms) {
       if (atomStates[name]) {
         reactotron.send('log', {
-          message: `Atom ${name} already exists`,
+          message: `Atom ${name} already exists!!`,
           level: 'warn',
         })
         continue
@@ -33,14 +33,11 @@ export function jotaiPlugin({ atoms, store }: StorePluginOptions) {
       }
       const unsub = store.sub(atom, () => {
         const next = store.get(atom)
-
-        if (next !== atomStates[name]) {
-          atomStates[name] = {
-            value: next,
-            timestamp: Date.now(),
-          }
-          sendStates()
+        atomStates[name] = {
+          value: next,
+          timestamp: Date.now(),
         }
+        sendStates()
       })
 
       subscriptions.push(unsub)
