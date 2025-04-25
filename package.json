@@ -1,0 +1,57 @@
+{
+  "name": "jotai-reactotron-plugin",
+  "version": "0.0.1",
+  "description": "A plugin for Reactotron to debug Jotai",
+  "homepage": "https://github.com/devucb/jotai-reactotron-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devucb/jotai-reactotron-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devucb/jotai-reactotron-plugin/issues"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "jotai",
+    "reactotron",
+    "plugin",
+    "state",
+    "debug"
+  ],
+  "contributors": [
+    {
+      "name": "devucb",
+      "email": "devucb01@gmail.com"
+    },
+    {
+      "name": "Şerif Çolakel",
+      "email": "serifcolakel0@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@types/node": "^22.15.2",
+    "commitlint": "^19.8.0",
+    "eslint": "^9.25.1",
+    "husky": "^9.1.7",
+    "jotai": "^2.12.3",
+    "prettier": "^3.5.3",
+    "reactotron-core-client": "^2.9.7",
+    "semantic-release": "^24.2.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
