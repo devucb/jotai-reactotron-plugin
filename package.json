@@ -1,5 +1,5 @@
 {
-  "name": "with-npm",
+  "name": "jotai-reactotron-plugin",
   "private": true,
   "workspaces": [
     "apps/*",

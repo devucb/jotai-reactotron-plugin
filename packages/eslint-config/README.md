@@ -1,3 +1,3 @@
-# `@repo/eslint-config`
+# `@devucb/eslint-config`
 
 Collection of internal eslint configurations.
