@@ -1,9 +1,11 @@
+import { getDefaultStore } from 'jotai'
 import { AtomState, ReactotronCore, StorePluginOptions } from './types'
 
 export function jotaiPlugin({ atoms, store }: StorePluginOptions) {
   return (reactotron: ReactotronCore) => {
     const subscriptions: (() => void)[] = []
 
+    const jotaiStore = store ?? getDefaultStore()
     const atomStates: Record<string, AtomState> = {}
     const sendStates = () => {
       const changes = Object.entries(atomStates)
@@ -26,13 +28,13 @@ export function jotaiPlugin({ atoms, store }: StorePluginOptions) {
         continue
       }
 
-      const value = store.get(atom)
+      const value = jotaiStore.get(atom)
       atomStates[name] = {
         value,
         timestamp: Date.now(),
       }
-      const unsub = store.sub(atom, () => {
-        const next = store.get(atom)
+      const unsub = jotaiStore.sub(atom, () => {
+        const next = jotaiStore.get(atom)
         atomStates[name] = {
           value: next,
           timestamp: Date.now(),

@@ -1,6 +1,6 @@
 import { atom, createStore } from 'jotai/vanilla'
 
-const store = createStore(() => {})
+// const store = createStore()
 const countAtom = atom(0)
 const userAtom = atom({ name: 'John', age: 30 })
 const todosAtom = atom([
@@ -9,11 +9,11 @@ const todosAtom = atom([
 ])
 
 const reacotronConfig = {
-  store,
+  store: undefined,
   atoms: [
     { name: 'count', atom: countAtom },
     { name: 'user', atom: userAtom },
     { name: 'todos', atom: todosAtom },
   ],
 }
-export { store, countAtom, userAtom, todosAtom, reacotronConfig }
+export { reacotronConfig, countAtom, userAtom, todosAtom }

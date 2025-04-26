@@ -9,7 +9,7 @@ type StoreItem = {
 
 type StorePluginOptions = {
   atoms: StoreItem[]
-  store: ReturnType<typeof createStore>
+  store?: ReturnType<typeof createStore>
 }
 
 type AtomState = {
